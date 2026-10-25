@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6%;
+  background: #fff;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.header-btn,
+.hero-btn {
+  display: inline-block;
+  background: #a77880;
+  color: white;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 30px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-height: 600px;
+  padding: 70px 8%;
+  background: #f9f0ee;
+}
+
+.hero-content,
+.hero-image {
+  flex: 1;
+}
+
+.hero-label {
+  color: #a77880;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 1.4;
+}
+
+.hero-description {
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.image-placeholder {
+  min-height: 400px;
+  background: #e5c9c7;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  letter-spacing: 4px;
+}
+
+.contact {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .logo {
+    font-size: 14px;
+  }
+
+  .header-btn {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 50px 20px;
+    gap: 30px;
+  }
+
+  .hero-content,
+  .hero-image {
+    width: 100%;
+  }
+
+  .image-placeholder {
+    min-height: 260px;
+  }
+}
+.clinic-image {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+  .clinic-image {
+    height: 280px;
+  }
+}
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 70px 20px;
+}
+
+.faq h2 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+  padding: 20px 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.faq-item p {
+  line-height: 1.8;
+  padding: 10px;
+}
+/* スクロール時のアニメーション */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-content,
+  .hero-image,
+  .contact,
+  .faq {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
